@@ -8,33 +8,33 @@ import { ArrowRight } from 'lucide-react';
 const services = [
     {
         icon: Stethoscope,
-        title: 'Mental Health Support',
-        description: 'Providing counseling and rehabilitation for victims of domestic violence and trauma through our partnership with Butabika Hospital.'
+        title: 'Trauma & Recovery',
+        description: 'Providing critical counseling and rehabilitation for victims of domestic violence and abuse through our dedicated hospital partnerships.'
     },
     {
         icon: BookOpen,
-        title: 'Digital Education',
-        description: 'The "Musomesa" Academy offers AI-driven learning tools to bridge the digital divide for rural youth and women.'
+        title: 'The Musomesa Rescue',
+        description: 'Deploying our AI-driven remote learning platform to combat the 83% learning poverty rate and give every child a seat in digital classrooms.'
     },
     {
         icon: Wheat,
-        title: 'Agricultural Reform',
-        description: 'Empowering women with modern farming techniques through the "Emmwanyi" Coffee Project for sustainable wealth creation.'
+        title: 'Women of Wealth',
+        description: 'Empowering mothers via micro-grants and the "Emmwanyi" Coffee Project, transforming agricultural labor into sustainable financial power.'
     },
     {
         icon: Gavel,
-        title: 'Legal Advocacy',
-        description: 'Fighting against Gender-Based Violence (GBV) and securing property rights for widows and vulnerable orphans.'
+        title: 'Justice & Advocacy',
+        description: 'Fighting Gender-Based Violence (GBV) and relentlessly pursuing policy change, like our demand for a 20% national education budget.'
     },
     {
         icon: Home,
-        title: 'Community Housing',
-        description: 'Building safe spaces and transitional housing for displaced families and women escaping abusive environments.'
+        title: 'Safe Havens',
+        description: 'Building secure, transitional housing for displaced families and women escaping abusive environments to rebuild their lives in peace.'
     },
     {
         icon: Users,
-        title: 'Veterans & Service Support',
-        description: 'Partnering with OWC to support civil-military cooperation and community stabilization efforts.'
+        title: 'Community Defense',
+        description: 'Partnering with local forces and OWC to support civil-military cooperation, ensuring our communities remain safe and stabilized.'
     }
 ];
 
@@ -44,13 +44,13 @@ export function HowWeHelp() {
             <div className="container">
                 <div className="text-center max-w-3xl mx-auto mb-16">
                     <span className="text-[var(--color-secondary)] font-bold tracking-widest text-sm uppercase mb-4 block">
-                        WHAT WE DO
+                        THE FAIR FIELD INITIATIVE
                     </span>
                     <h2 className="text-4xl md:text-5xl font-bold font-serif mb-6 text-[var(--color-text-dark)]">
-                        Comprehensive Support for <br /> <span className="text-[var(--color-primary)]">Lasting Change</span>
+                        Strategic Action for <br /> <span className="text-[var(--color-primary)]">National Change</span>
                     </h2>
                     <p className="text-lg text-[var(--color-text-light)] leading-relaxed">
-                        Just like SSAFA supports the Armed Forces, Fairfield Charity supports the "Soldiers of Life"—the resilient women and youth fighting for a better future in Uganda.
+                        We don't just treat symptoms; we change the system. From classrooms to courtrooms, the Fairfield Charity is deploying tactical solutions to rebuild Uganda's future.
                     </p>
                 </div>
 

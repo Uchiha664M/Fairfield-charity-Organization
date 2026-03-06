@@ -5,25 +5,25 @@ import { ArrowRight, Calendar } from 'lucide-react';
 
 const news = [
     {
-        category: 'Event',
-        title: "The Mongers Rugby 'Men for Change' Event",
-        date: 'June 12, 2025',
+        category: 'Action',
+        title: "The 'Rescue Plan' Launch: Musomesa Goes Live",
+        date: 'October 15, 2025',
         image: 'https://images.unsplash.com/photo-1529176656151-16478e13dfbf?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80',
-        excerpt: 'Mobilizing men as allies in the fight against domestic violence and promoting positive masculinity through sport.',
+        excerpt: 'Our definitive answer to Uganda’s 83% learning poverty rate. We are bypassing the broken systems and giving every child a seat in the world’s first AI-driven university.',
     },
     {
-        category: 'Civic Engagement',
-        title: "The 'Vote for Peace' Civic Renewal Campaign",
-        date: 'August 04, 2025',
+        category: 'Advocacy',
+        title: "The 20% Promise: Demanding a Fair Field",
+        date: 'November 02, 2025',
         image: 'https://images.unsplash.com/photo-1541872703-74c5963631df?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80',
-        excerpt: 'Encouraging youth participation in the democratic process with a focus on peace, unity, and informed decision making.',
+        excerpt: 'Elle’s formal address to Parliament, demanding the national education budget be raised to 20% to implement compulsory pre-primary education worldwide.',
     },
     {
-        category: 'Gala',
-        title: 'The 100 Most Influential Women Gala',
-        date: 'September 20, 2025',
+        category: 'Impact',
+        title: 'The Women of Wealth Gala',
+        date: 'December 10, 2025',
         image: 'https://images.unsplash.com/photo-1560520653-9e0e4c89eb11?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80',
-        excerpt: 'Celebrating the women effectively shaping Uganda’s future across business, politics, and social impact.',
+        excerpt: 'Celebrating the mothers who form the economic backbone of Uganda. Launching our new micro-grant framework to shift families from poverty to power.',
     }
 ];
 

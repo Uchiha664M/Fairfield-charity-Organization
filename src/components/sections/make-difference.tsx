@@ -15,22 +15,22 @@ export function MakeDifference() {
                 {/* PART 1: Make a Difference (Cards) */}
                 <div className="text-center max-w-3xl mx-auto mb-20">
                     <span className="text-[var(--color-secondary)] font-bold tracking-widest text-xs uppercase mb-4 block">
-                        WHAT WE DO
+                        THE FAIR FIELD DIFFERENCE
                     </span>
                     <h2 className="text-4xl md:text-5xl font-serif font-bold text-[#1B3B36] mb-6">
-                        Make a Difference
+                        Radical Transparency
                     </h2>
                     <p className="text-gray-500 max-w-2xl mx-auto">
-                        It's through initiatives that you can help us get out of everything that is not supposed to matter so we can matter.
+                        Your trust is our highest currency. We strip away the bureaucracy so your impact hits the ground exactly where it is needed most.
                     </p>
                 </div>
 
                 <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-32">
                     {[
-                        { icon: Droplets, title: 'Free Access', desc: 'A group of donors cover our operating costs so 100% of your money can fund water projects.' },
-                        { icon: Users, title: 'Locals for Locals', desc: 'A group of donors cover our operating costs so 100% of your money can fund water projects.' },
-                        { icon: Activity, title: 'Real Impact', desc: 'A group of donors cover our operating costs so 100% of your money can fund water projects.' },
-                        { icon: Shield, title: 'Safety Net', desc: 'A group of donors cover our operating costs so 100% of your money can fund water projects.' }
+                        { icon: Droplets, title: 'Direct Impact', desc: '100% of public donations go directly to funding field projects, not overhead.' },
+                        { icon: Users, title: 'Locals for Locals', desc: 'Every project is built, operated, and sustained by the Ugandan communities they serve.' },
+                        { icon: Activity, title: 'Data-Driven', desc: 'We measure success in poverty reduction rates and school graduations, not just funds raised.' },
+                        { icon: Shield, title: 'Safe Havens', desc: 'Strict safeguarding protocols ensure the physical and emotional security of every woman and child.' }
                     ].map((item, idx) => (
                         <motion.div
                             key={idx}
@@ -101,18 +101,18 @@ export function MakeDifference() {
                         className="text-center lg:text-left flex-1 min-w-0"
                     >
                         <span className="text-[var(--color-secondary)] font-bold tracking-widest text-xs uppercase mb-4 block">
-                            ABOUT US
+                            THE MUSOMESA PROMISE
                         </span>
                         <h2 className="text-4xl md:text-6xl font-serif font-bold text-[#1B3B36] mb-8 leading-tight">
-                            Changing Lives with <br /> Knowledge
+                            The End of <br /> Learning Poverty
                         </h2>
 
                         <p className="text-lg font-medium text-[#1B3B36] mb-6">
-                            Our promise that your giving is doing what it's supposed to: changing lives.
+                            83% of Ugandan children cannot read an age-appropriate text by age 10. We refuse to accept this.
                         </p>
 
                         <p className="text-gray-500 leading-relaxed mb-10 max-w-2xl mx-auto lg:mx-0">
-                            Today, we will work to defeat life-saving aid to millions of people living on the edge of survival. Tomorrow, where the crisis subsides, we will work alongside community members to restore job opportunities.
+                            The Musomesa platform bypasses crumbling infrastructure to deliver AI-powered, world-class education directly to the most remote villages. We are not just building schools; we are accelerating minds.
                         </p>
 
                         <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-6">

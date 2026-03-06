@@ -11,7 +11,7 @@ export default function ContactPage() {
                 <div className="container max-w-5xl">
                     <h1 className="text-4xl md:text-5xl font-bold mb-8 font-serif text-center">Contact Us</h1>
                     <p className="text-lg text-[var(--color-text-light)] mb-16 text-center max-w-2xl mx-auto">
-                        We'd love to hear from you. Reach out to us for any inquiries or partnerships.
+                        Ready to mobilize? Whether you want to fund a Musomesa student, partner on a hospital grant, or enlist as a volunteer, our command center is waiting for your signal.
                     </p>
 
                     <div className="grid md:grid-cols-2 gap-12">

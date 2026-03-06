@@ -13,28 +13,28 @@ const events = [
         day: '03',
         month: 'MARCH',
         image: 'https://images.unsplash.com/photo-1541534741688-6078c6bfb5c5?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80',
-        title: 'Women in Leadership Gala',
+        title: 'Women of Wealth Gala',
         dateStr: 'THURSDAY, MARCH 3RD, 2026 | 6:00PM - 10:00PM',
-        description: 'Celebrate the achievements of women leaders in our community with Miss Uganda Elle Trivia.',
+        description: 'Launching our nationwide micro-grant initiative. Join Miss Uganda Elle Trivia as we fund 100 female-led agri-businesses.',
         location: 'Kampala Serena Hotel'
     },
     {
         day: '19',
         month: 'MARCH',
         image: 'https://images.unsplash.com/photo-1593113598332-cd288d649433?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80',
-        title: 'Community Clean-Up Drive',
+        title: 'The 20% Challenge Rally',
         dateStr: 'SATURDAY, MARCH 19TH, 2026 | 8:00AM - 12:00PM',
-        description: 'Join over 500 volunteers as we clean up the streets and promote environmental hygiene.',
-        location: 'Downtown Kampala'
+        description: 'A peaceful assembly demanding the national education budget hit 20% for universal pre-primary funding.',
+        location: 'Parliamentary Avenue, Kampala'
     },
     {
         day: '02',
         month: 'APRIL',
         image: 'https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80',
-        title: 'Scholarship Fundraiser',
+        title: 'Musomesa Hackathon',
         dateStr: 'SATURDAY, APRIL 2ND, 2026 | 10:00AM - 4:00PM',
-        description: 'A charity auction and lunch to raise funds for the Musomesa Academy scholarship program.',
-        location: 'Fairfield HQ Gardens'
+        description: 'Bringing together top developers to build new AI modules for our remote education platform. Code for a cause.',
+        location: 'Innovation Village'
     }
 ];
 
@@ -51,14 +51,13 @@ export function UpcomingEvents() {
                 <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
                     <div className="max-w-2xl">
                         <span className="text-[var(--color-secondary)] font-bold uppercase tracking-wider text-sm mb-4 block">
-                            Get Involved
+                            MOBILIZE WITH US
                         </span>
                         <h2 className="text-4xl md:text-5xl font-bold font-serif mb-6 text-white">
-                            Upcoming Events
+                            The FrontLINES
                         </h2>
                         <p className="text-gray-300 text-lg leading-relaxed">
-                            Join us at our upcoming galas, fundraisers, and community meetups.
-                            Together, we celebrate our progress and fuel our future.
+                            Change doesn’t happen in boardrooms; it happens in the streets, the fields, and the code. Join our upcoming rallies, hackathons, and galas.
                         </p>
                     </div>
                     <Button

@@ -50,36 +50,36 @@ export function CoreValues() {
                         {
                             icon: Heart,
                             color: 'text-yellow-400',
-                            title: 'Sharing',
-                            description: 'Share feelings and spiritual to the poor, children around the world, helping them to integrate into the community.',
-                            link: 'FIND CAMPAIGNS',
+                            title: 'Unapologetic Action',
+                            description: 'We prioritize tangible results over rhetoric. Empathy without action is an insult to those waiting for help.',
+                            link: 'SEE OUR IMPACT',
                             href: '/campaigns',
                             borderColor: 'border-yellow-400'
                         },
                         {
                             icon: Coins,
                             color: 'text-orange-500',
-                            title: 'Donation',
-                            description: 'A gift made by an individual or an organization to a nonprofit organization, charity or private foundation.',
-                            link: 'MAKE A DONATION',
+                            title: 'Direct Deployment',
+                            description: '100% of public donations secure actual resources—from hospital bills to textbooks—bypassing wasteful bureaucracy.',
+                            link: 'BACK THE MISSION',
                             href: '/contact',
                             borderColor: 'border-orange-500'
                         },
                         {
                             icon: Users,
                             color: 'text-green-500',
-                            title: 'Community',
-                            description: 'We help local nonprofits access the funding, tools, training, and support they need to become more effective.',
-                            link: 'JOIN US',
+                            title: 'Community Ownership',
+                            description: 'We do not impose; we equip. Every initiative is led by local champions to ensure lasting, generational change.',
+                            link: 'REGISTER TODAY',
                             href: '/volunteer',
                             borderColor: 'border-green-500'
                         },
                         {
                             icon: Globe,
                             color: 'text-blue-500',
-                            title: 'Responsibilities',
-                            description: 'Are you concerned about the health of our planet, and ready to do what you can to save it?',
-                            link: 'OUR PROMISE',
+                            title: 'Systematic Change',
+                            description: 'Charity is a temporary bandage. We fight at the policy level for a 20% education budget to secure the future permanently.',
+                            link: 'OUR VISION',
                             href: '/projects',
                             borderColor: 'border-blue-500'
                         }
