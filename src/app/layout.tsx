@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Inter, Playfair_Display } from "next/font/google";
 import "./globals.css";
+import { LoadingScreen } from '@/components/layout/loading-screen';
+import { NoiseTexture } from '@/components/ui/noise-texture';
 
 const inter = Inter({
   variable: "--font-inter",
@@ -13,11 +15,13 @@ const playfair = Playfair_Display({
 });
 
 export const metadata: Metadata = {
-  title: "Fairfield Charity Organization - Justice Begins Where Inequality Ends",
-  description: "We're building a world where everyone has the power to shape their lives. Join us in making a lasting impact today.",
+  title: "Fairfield Charity Organization | Dignity First. Systems That Let Hope Stay.",
+  description:
+    "Fairfield Charity Organization is building a partnership-ready platform for recovery, girls' education, and economic resilience across Uganda.",
   openGraph: {
     title: "Fairfield Charity Organization",
-    description: "Justice Begins Where Inequality Ends. Join us in making a lasting impact.",
+    description:
+      "A founder-led platform advancing dignity, recovery, education, and economic resilience across Uganda.",
     url: "https://fairfieldcharity.org",
     siteName: "Fairfield Charity",
     images: [
@@ -33,7 +37,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Fairfield Charity Organization",
-    description: "Justice Begins Where Inequality Ends.",
+    description: "Dignity first. Systems that let hope stay.",
     images: ["https://fairfieldcharity.org/og-image.jpg"],
   },
 };
@@ -45,9 +49,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${inter.variable} ${playfair.variable} antialiased`}
-      >
+      <body className={`${inter.variable} ${playfair.variable} antialiased`}>
+        <LoadingScreen />
+        <NoiseTexture />
         {children}
       </body>
     </html>

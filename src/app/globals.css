@@ -4,38 +4,32 @@
   --font-sans: var(--font-inter);
   --font-serif: var(--font-playfair);
 
-  --color-primary: #1B3B5F;
-  --color-primary-dark: #102A44;
-  --color-secondary: #FF9F1C;
-  --color-secondary-dark: #E68A00;
-  --color-accent: #E71D36;
-  --color-highlight: #2EC4B6;
-  --color-text-dark: #1A1A1A;
-  --color-text-light: #666666;
+  --color-primary: #1B3A5C;
+  --color-primary-dark: #0F2440;
+  --color-primary-light: #2A5580;
+  --color-secondary: #F5A623;
+  --color-secondary-dark: #D48E10;
+  --color-accent: #E85D3A;
+  --color-highlight: #2BBCB3;
+  --color-highlight-light: #3AD4CA;
+  --color-text-dark: #0F172A;
+  --color-text-light: #64748B;
+  --color-surface: #F8FAFB;
   --color-background: #ffffff;
-  --color-foreground: #1A1A1A;
+  --color-foreground: #0F172A;
 
-  --container-max-width: 1200px;
-  --spacing-sm: 8px;
-  --spacing-md: 16px;
-  --spacing-lg: 32px;
-  --spacing-xl: 64px;
+  --container-max-width: 1320px;
 }
 
-/* Custom Utilities */
 @utility container {
   margin-inline: auto;
-  padding-inline: 1rem;
+  padding-inline: 1.5rem;
   max-width: var(--container-max-width);
-}
-
-@utility section-padding {
-  padding-block: var(--spacing-xl);
 }
 
 :root {
   --background: #ffffff;
-  --foreground: #171717;
+  --foreground: #0F172A;
 }
 
 html {
@@ -43,42 +37,128 @@ html {
 }
 
 body {
-  background: var(--background);
+  background:
+    radial-gradient(circle at top left, rgba(245, 166, 35, 0.05), transparent 24%),
+    radial-gradient(circle at bottom right, rgba(43, 188, 179, 0.05), transparent 28%),
+    var(--background);
   color: var(--foreground);
   font-family: var(--font-sans);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
 }
 
-/* Global Reset */
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
+h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-serif);
-  line-height: 1.2;
+  line-height: 1.08;
 }
 
 button {
   cursor: pointer;
 }
 
-@keyframes scroll {
-  0% {
-    transform: translateX(0);
-  }
+::selection {
+  background: rgba(245, 166, 35, 0.2);
+  color: var(--color-primary-dark);
+}
 
-  100% {
-    transform: translateX(-50%);
-  }
+.section-divider {
+  height: 1px;
+  background: linear-gradient(to right, transparent, #1B3A5C20, transparent);
+}
+
+@keyframes scroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
 }
 
 .animate-scroll {
-  animation: scroll 30s linear infinite;
+  animation: scroll 35s linear infinite;
 }
 
 .animate-scroll:hover {
-  animation-duration: 60s;
+  animation-duration: 70s;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-14px); }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+@keyframes shimmer {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+.animate-shimmer {
+  animation: shimmer 2s ease-in-out;
+}
+
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(245, 166, 35, 0.4); }
+  50% { box-shadow: 0 0 20px 8px rgba(245, 166, 35, 0.15); }
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 3s ease-in-out infinite;
+}
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.06);
+}
+
+.glass-card-dark {
+  background: rgba(15, 36, 64, 0.60);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+.premium-card {
+  border: 1px solid rgba(27, 58, 92, 0.06);
+  border-radius: 1.5rem;
+  transition: all 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.premium-card:hover {
+  border-color: transparent;
+  box-shadow: 0 25px 50px -12px rgba(27, 58, 92, 0.08);
+  transform: translateY(-4px);
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.section-padding {
+  padding-top: 6rem;
+  padding-bottom: 6rem;
+}
+
+@media (min-width: 768px) {
+  .section-padding {
+    padding-top: 7rem;
+    padding-bottom: 7rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .section-padding {
+    padding-top: 8rem;
+    padding-bottom: 8rem;
+  }
 }

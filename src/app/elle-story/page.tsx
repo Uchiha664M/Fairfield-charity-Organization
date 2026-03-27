@@ -2,147 +2,203 @@
 
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import Link from 'next/link';
+import { ArrowRight, Crown, ExternalLink, Heart, Instagram, Map, Megaphone, Plane, Sparkles, Sprout } from 'lucide-react';
 import { Header } from '@/components/layout/header';
 import { Footer } from '@/components/layout/footer';
+import { Button } from '@/components/ui/button';
 import { InteractiveMap } from '@/components/elle-story/interactive-map';
-import { ArrowRight, Plane, Crown, Sprout, Heart, Map } from 'lucide-react';
 
 const sections = [
-    {
-        id: 'hero',
-        title: "A Girl. A Dream. A Duty.",
-        content: "The journey of Miss Uganda 2025, Elle Trivia Muhoza, is not just a story of beauty. It is a story of grit, gravity, and grace. Click the map locations to explore her path.",
-        icon: Map,
-        color: "from-[#2E0249] to-[#0F0418]" // Deep Purple
-    },
-    {
-        id: 'roots',
-        title: "The Roots: Red Earth",
-        subtitle: "Bukomansimbi District",
-        content: "It started in the red soil of Bukomansimbi. Before the cameras and the crown, there was the garden. Growing up here taught me that nothing grows without rain, and no dream survives without work. I didn't just learn to farm; I learned resilience. My grandmother taught me that a Queen is not someone who rules, but someone who serves.",
-        icon: Sprout,
-        color: "from-[#450a0a] to-[#7f1d1d]" // Red Earth
-    },
-    {
-        id: 'wings',
-        title: "The Wings: Blue Sky",
-        subtitle: "Soroti Flying School",
-        content: "I traded the hoe for the yoke. Training as a pilot changed my DNA. Aviation demands perfection, procedure, and nerve. You cannot panic at 10,000 feet. This discipline became the backbone of 'Elle Cares.' Charity is not just about kindness; it is about logistics, precision, and landing the aid exactly where it is needed.",
-        icon: Plane,
-        color: "from-[#0c4a6e] to-[#0284c7]" // Sky Blue / Aviation
-    },
-    {
-        id: 'crown',
-        title: "The Crown: Golden Duty",
-        subtitle: "Kampala, Serena Hotel",
-        content: "The sash is not a decoration; it is a microphone. Winning Miss Uganda 2025 was not the finish line—it was the starting gun. I accepted this crown to amplify the voices of the girls back in the village who have the same dreams I did, but lack the same road.",
-        icon: Crown,
-        color: "from-[#451a03] to-[#b45309]" // Gold / Bronze
-    },
-    {
-        id: 'mission',
-        title: "The Mission: The Return",
-        subtitle: "Fairfield Charity Organization",
-        content: "Now, the journey loops back. Through Fairfield Charity Organization, I am returning to Bukomansimbi, to Lwengo, to Gulu. We are building the 'Fair Field' I dreamed of. We are bringing the 'Musomesa' education to the youth and the 'Emmwanyi' coffee wealth to the mothers. I am no longer just Elle; I am a servant of the Pearl.",
-        icon: Heart,
-        color: "from-[#115e59] to-[#0d9488]" // Teal / Brand
-    }
+  {
+    id: 'hero',
+    title: 'A girl, a platform, and a wider stage.',
+    content:
+      'Elle Trivia Muhoza’s story is no longer just about a crown. It is about how personal discipline, public visibility, and purpose-led advocacy can strengthen a social mission. Tap the map points to move through her story.',
+    icon: Map,
+    color: 'from-[#220b33] to-[#090f1c]',
+  },
+  {
+    id: 'roots',
+    title: 'The roots: service before spotlight',
+    subtitle: 'Bukomansimbi District',
+    content:
+      'Before recognition came responsibility. The discipline of rural life, the work ethic of family, and the closeness of community built a service instinct that now shapes how Elle speaks about dignity, girls, and opportunity.',
+    icon: Sprout,
+    color: 'from-[#4b1f14] to-[#1f0b0d]',
+  },
+  {
+    id: 'wings',
+    title: 'The wings: precision and courage',
+    subtitle: 'Soroti Flying School',
+    content:
+      'Flight training sharpened more than ambition. It built calm under pressure, procedural discipline, and a practical understanding that care must also be organized. That mindset now informs the way Elle frames advocacy through Elle Cares.',
+    icon: Plane,
+    color: 'from-[#0b4161] to-[#07111c]',
+  },
+  {
+    id: 'crown',
+    title: 'The crown: visibility becomes leverage',
+    subtitle: 'Miss Uganda 2025',
+    content:
+      'When Elle was crowned Miss Uganda, the platform changed. Her voice could now travel further, carry more weight, and open more doors — not for self-display, but for causes that deserve sustained public attention.',
+    icon: Crown,
+    color: 'from-[#5a2e08] to-[#1b0e08]',
+  },
+  {
+    id: 'mission',
+    title: 'The mission: Fairfield meets Elle Cares',
+    subtitle: 'Fairfield Charity Organization',
+    content:
+      'As Fairfield Global Ambassador, Elle helps connect advocacy with institutional storytelling. Elle Cares gives the message public energy; Fairfield gives it community grounding, program direction, and a structure partners can trust.',
+    icon: Heart,
+    color: 'from-[#0d4f4a] to-[#07141a]',
+  },
+] as const;
+
+const proof = [
+  { value: '22K', label: 'Instagram followers' },
+  { value: '295', label: 'Public posts' },
+  { value: '2025', label: 'Miss Uganda year' },
 ];
 
 export default function ElleStoryPage() {
-    const [activeSection, setActiveSection] = useState('hero');
+  const [activeSection, setActiveSection] = useState<(typeof sections)[number]['id']>('hero');
 
-    // Get active background gradient
-    const activeGradient = sections.find(s => s.id === activeSection)?.color || sections[0].color;
-    const activeData = sections.find(s => s.id === activeSection) || sections[0];
+  const activeGradient = sections.find((s) => s.id === activeSection)?.color || sections[0].color;
+  const activeData = sections.find((s) => s.id === activeSection) || sections[0];
 
-    return (
-        <main className={`min-h-screen transition-colors duration-1000 bg-gradient-to-br ${activeGradient} flex flex-col`}>
-            <Header />
+  return (
+    <main className={`min-h-screen bg-gradient-to-br ${activeGradient} text-white transition-colors duration-1000`}>
+      <Header />
 
-            <div className="flex-1 container pt-32 pb-12 flex flex-col lg:flex-row gap-8 lg:gap-16 items-center">
-
-                {/* LEFT COLUMN: Interactive Map */}
-                <div className="w-full lg:w-1/2 h-[50vh] lg:h-[70vh] relative z-10">
-                    <InteractiveMap
-                        currentSection={activeSection}
-                        onSectionSelect={setActiveSection}
-                    />
-
-                    {/* Instructions Overlay (fades out once interacted) */}
-                    {activeSection === 'hero' && (
-                        <motion.div
-                            initial={{ opacity: 0 }}
-                            animate={{ opacity: 1 }}
-                            className="absolute -bottom-8 left-0 right-0 text-center lg:hidden"
-                        >
-                            <span className="text-white/60 text-sm animate-pulse">Tap map points to explore</span>
-                        </motion.div>
-                    )}
-                </div>
-
-                {/* RIGHT COLUMN: Interactive Content Panel */}
-                <div className="w-full lg:w-1/2 flex flex-col justify-center h-full min-h-[40vh]">
-                    <AnimatePresence mode="wait">
-                        <motion.div
-                            key={activeSection}
-                            initial={{ opacity: 0, x: 50 }}
-                            animate={{ opacity: 1, x: 0 }}
-                            exit={{ opacity: 0, x: -50 }}
-                            transition={{ duration: 0.5 }}
-                            className="bg-white/10 backdrop-blur-md rounded-[3rem] p-8 md:p-12 border border-white/20 shadow-2xl relative overflow-hidden"
-                        >
-                            {/* Decorative Background Icon */}
-                            {activeData.icon && (
-                                <activeData.icon className="absolute -right-8 -bottom-8 w-64 h-64 text-white/5 rotate-[-15deg]" />
-                            )}
-
-                            <div className="mb-6 flex items-center gap-4 relative z-10">
-                                {activeData.icon && (
-                                    <div className="w-14 h-14 rounded-full bg-white/20 flex items-center justify-center text-white shadow-inner">
-                                        <activeData.icon className="w-7 h-7" />
-                                    </div>
-                                )}
-                                {activeData.subtitle && (
-                                    <span className="text-[var(--color-secondary)] font-bold uppercase tracking-widest text-sm bg-black/20 px-3 py-1 rounded-full">
-                                        {activeData.subtitle}
-                                    </span>
-                                )}
-                            </div>
-
-                            <h2 className="text-3xl md:text-5xl font-serif font-bold text-white mb-6 leading-tight relative z-10">
-                                {activeData.title}
-                            </h2>
-
-                            <p className="text-lg md:text-xl text-gray-200 leading-relaxed font-light mb-8 relative z-10">
-                                {activeData.content}
-                            </p>
-
-                            {/* Section Navigation / CTA */}
-                            <div className="flex flex-wrap gap-4 relative z-10">
-                                {activeSection === 'mission' ? (
-                                    <button className="bg-[var(--color-secondary)] hover:bg-yellow-600 text-white px-8 py-3 rounded-full font-bold uppercase tracking-widest transition-all shadow-lg hover:shadow-xl hover:scale-105 flex items-center gap-2">
-                                        Join our Vision <ArrowRight className="w-4 h-4" />
-                                    </button>
-                                ) : (
-                                    <div className="flex gap-2">
-                                        {/* Quick Nav Chips */}
-                                        {sections.map(s => (
-                                            <button
-                                                key={s.id}
-                                                onClick={() => setActiveSection(s.id)}
-                                                className={`w-3 h-3 rounded-full transition-all ${activeSection === s.id ? 'bg-white scale-125' : 'bg-white/30 hover:bg-white/60'}`}
-                                                aria-label={`Go to ${s.title}`}
-                                            />
-                                        ))}
-                                    </div>
-                                )}
-                            </div>
-                        </motion.div>
-                    </AnimatePresence>
-                </div>
+      <section className="container pt-32">
+        <div className="grid gap-8 lg:grid-cols-[minmax(0,1.1fr)_380px] lg:items-start">
+          <div>
+            <div className="mb-5 inline-flex items-center gap-3 rounded-full border border-white/10 bg-white/8 px-4 py-2 backdrop-blur-md">
+              <Sparkles className="h-4 w-4 text-[var(--color-secondary)]" />
+              <span className="text-[11px] font-semibold uppercase tracking-[0.28em] text-white/78">Elle Story • Fairfield Platform • Miss Uganda</span>
             </div>
-            {/* Footer removed from view for cleaner "One Page" feel, or kept minimal? User said "one page of the page". Keeping main footer but pushed down. */}
-        </main>
-    );
+            <h1 className="max-w-4xl text-5xl font-semibold leading-[0.95] tracking-[-0.04em] text-white md:text-7xl">
+              The story behind the crown — and what it now makes possible.
+            </h1>
+            <p className="mt-6 max-w-3xl text-lg leading-relaxed text-slate-200 md:text-xl">
+              This page tracks how Elle Trivia Muhoza’s personal path evolved into a public platform that now supports advocacy,
+              Fairfield storytelling, and the wider language of <span className="font-semibold text-white">Elle Cares</span>.
+            </p>
+          </div>
+
+          <div className="rounded-[2rem] border border-white/10 bg-white/[0.08] p-6 backdrop-blur-2xl">
+            <p className="text-[10px] uppercase tracking-[0.24em] text-[var(--color-secondary)]">Public profile snapshot</p>
+            <div className="mt-5 grid grid-cols-3 gap-3">
+              {proof.map((item) => (
+                <div key={item.label} className="rounded-2xl border border-white/8 bg-white/[0.04] p-4 text-center">
+                  <div className="text-2xl font-semibold tracking-tight text-white">{item.value}</div>
+                  <div className="mt-1 text-[10px] uppercase tracking-[0.2em] text-white/45">{item.label}</div>
+                </div>
+              ))}
+            </div>
+            <a
+              href="https://www.instagram.com/muhozatriviaelle/"
+              target="_blank"
+              rel="noreferrer"
+              className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-white/75 transition-colors hover:text-white"
+            >
+              <Instagram className="h-4 w-4" />
+              Visit @muhozatriviaelle
+              <ExternalLink className="h-4 w-4" />
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section className="container flex flex-col gap-8 py-12 lg:flex-row lg:gap-16 lg:py-14">
+        <div className="relative z-10 h-[48vh] w-full lg:h-[72vh] lg:w-1/2">
+          <InteractiveMap
+            currentSection={activeSection}
+            onSectionSelect={(section) => setActiveSection(section as (typeof sections)[number]['id'])}
+          />
+          {activeSection === 'hero' && (
+            <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="absolute -bottom-8 left-0 right-0 text-center lg:hidden">
+              <span className="text-sm text-white/60 animate-pulse">Tap map points to explore the story</span>
+            </motion.div>
+          )}
+        </div>
+
+        <div className="flex w-full flex-col justify-center lg:w-1/2">
+          <AnimatePresence mode="wait">
+            <motion.div
+              key={activeSection}
+              initial={{ opacity: 0, x: 40 }}
+              animate={{ opacity: 1, x: 0 }}
+              exit={{ opacity: 0, x: -40 }}
+              transition={{ duration: 0.45 }}
+              className="relative overflow-hidden rounded-[2.5rem] border border-white/15 bg-white/[0.10] p-8 shadow-2xl backdrop-blur-2xl md:p-12"
+            >
+              <activeData.icon className="absolute -bottom-8 -right-8 h-56 w-56 rotate-[-16deg] text-white/5" />
+
+              <div className="relative z-10 flex items-center gap-4">
+                <div className="flex h-14 w-14 items-center justify-center rounded-full bg-white/20 text-white shadow-inner">
+                  <activeData.icon className="h-7 w-7" />
+                </div>
+                {'subtitle' in activeData && activeData.subtitle && (
+                  <span className="rounded-full bg-black/20 px-3 py-1 text-sm font-bold uppercase tracking-widest text-[var(--color-secondary)]">
+                    {activeData.subtitle}
+                  </span>
+                )}
+              </div>
+
+              <h2 className="relative z-10 mt-7 text-3xl font-semibold leading-tight text-white md:text-5xl">{activeData.title}</h2>
+              <p className="relative z-10 mt-6 text-lg font-light leading-relaxed text-slate-200 md:text-xl">{activeData.content}</p>
+
+              <div className="relative z-10 mt-8 flex flex-wrap gap-3">
+                {sections.map((section) => (
+                  <button
+                    key={section.id}
+                    onClick={() => setActiveSection(section.id)}
+                    className={`rounded-full px-4 py-2 text-[11px] font-semibold uppercase tracking-[0.22em] transition-all ${activeSection === section.id ? 'bg-white text-[#08111d]' : 'bg-white/10 text-white/70 hover:bg-white/20 hover:text-white'}`}
+                    aria-label={`Go to ${section.title}`}
+                  >
+                    {section.id}
+                  </button>
+                ))}
+              </div>
+
+              <div className="relative z-10 mt-10 flex flex-col gap-4 border-t border-white/10 pt-6 sm:flex-row sm:items-center">
+                <Link href="/miss-world">
+                  <Button className="rounded-full bg-[var(--color-secondary)] px-8 py-5 text-xs font-bold uppercase tracking-[0.24em] text-[var(--color-primary)] hover:bg-[#ffd075]">
+                    View full Miss Uganda profile
+                    <ArrowRight className="ml-2 h-4 w-4" />
+                  </Button>
+                </Link>
+                <div className="inline-flex items-center gap-2 text-sm text-white/65">
+                  <Megaphone className="h-4 w-4 text-[var(--color-secondary)]" />
+                  Elle Cares now amplifies Fairfield’s public-facing mission.
+                </div>
+              </div>
+            </motion.div>
+          </AnimatePresence>
+        </div>
+      </section>
+
+      <section className="container pb-20">
+        <div className="grid gap-6 rounded-[2.5rem] border border-white/10 bg-white/[0.06] p-8 backdrop-blur-2xl lg:grid-cols-3 lg:p-10">
+          <div>
+            <p className="text-[10px] uppercase tracking-[0.24em] text-[var(--color-secondary)]">What changed</p>
+            <h3 className="mt-3 text-2xl font-semibold tracking-tight text-white">Visibility now has direction.</h3>
+          </div>
+          <div className="rounded-2xl border border-white/8 bg-white/[0.03] p-5">
+            <h4 className="text-lg font-semibold text-white">Before</h4>
+            <p className="mt-2 text-sm leading-relaxed text-slate-300">A compelling personal story and title, but without a fully unified public narrative across Fairfield’s digital presence.</p>
+          </div>
+          <div className="rounded-2xl border border-white/8 bg-white/[0.03] p-5">
+            <h4 className="text-lg font-semibold text-white">Now</h4>
+            <p className="mt-2 text-sm leading-relaxed text-slate-300">A connected profile where Miss Uganda visibility, Elle Cares advocacy, and Fairfield’s institutional story reinforce one another.</p>
+          </div>
+        </div>
+      </section>
+
+      <Footer />
+    </main>
+  );
 }

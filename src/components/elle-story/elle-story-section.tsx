@@ -80,13 +80,16 @@ export function ElleStorySection() {
                             key={section.id}
                             layout
                             onClick={() => setActiveId(section.id)}
-                            className={`relative rounded-[1.5rem] md:rounded-[2rem] overflow-hidden cursor-pointer shadow-2xl ${isActive ? 'flex-[10] md:flex-[6]' : 'flex-[1] md:flex-[1] hover:flex-[1.5] md:hover:flex-[1.5]'
-                                }`}
+                            className="relative rounded-[1.5rem] md:rounded-[2rem] overflow-hidden cursor-pointer shadow-2xl origin-center"
+                            animate={{
+                                flex: isActive ? 6 : 1,
+                            }}
+                            whileHover={{
+                                flex: isActive ? 6 : 1.5,
+                            }}
                             transition={{ type: "spring", stiffness: 100, damping: 20 }}
                         >
                             {/* Background Image (or Video) */}
-                            {/* If you add a 'video' property to the section object, it will render here */}
-                            {/* Example: video: "/assets/videos/hero.mp4" */}
                             {(section as any).video ? (
                                 <video
                                     src={(section as any).video}
@@ -108,34 +111,52 @@ export function ElleStorySection() {
                             )}
 
                             {/* Gradient Overlays */}
-                            <div className={`absolute inset-0 bg-black/60 md:bg-black/30 ${isActive ? 'opacity-0' : 'opacity-100'} transition-opacity duration-500`} />
-                            <div className={`absolute inset-0 bg-gradient-to-t from-black/95 via-black/50 to-transparent ${isActive ? 'opacity-100' : 'opacity-0'} transition-opacity duration-500`} />
+                            <motion.div
+                                className="absolute inset-0 bg-black/60 md:bg-black/30"
+                                animate={{ opacity: isActive ? 0 : 1 }}
+                                transition={{ duration: 0.5 }}
+                            />
+                            <motion.div
+                                className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/50 to-transparent"
+                                animate={{ opacity: isActive ? 1 : 0 }}
+                                transition={{ duration: 0.5 }}
+                            />
 
-                            {/* Active Content (Bottom Aligned) - Fixed Width Pattern for Reveal Effect */}
-                            <div className={`absolute bottom-0 left-0 p-6 md:p-10 flex flex-col justify-end h-full transition-all duration-500 w-full md:w-[600px] ${isActive ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4 pointer-events-none'}`}>
-
-                                <div className="w-full md:w-[500px] whitespace-normal">
+                            {/* Active Content (Bottom Aligned) */}
+                            <motion.div
+                                className="absolute bottom-0 left-0 p-6 md:p-10 flex flex-col justify-end h-full w-[90vw] md:w-[600px] overflow-hidden"
+                                initial={false}
+                                animate={{
+                                    opacity: isActive ? 1 : 0,
+                                    y: isActive ? 0 : 20,
+                                    pointerEvents: isActive ? 'auto' : 'none'
+                                }}
+                                transition={{ duration: 0.5 }}
+                            >
+                                <div className="whitespace-normal flex-shrink-0 w-[280px] md:w-[480px]">
                                     <div className="flex items-center gap-3 mb-4">
-                                        <div className="w-8 h-8 md:w-10 md:h-10 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center text-white border border-white/20">
+                                        <div className="w-8 h-8 md:w-10 md:h-10 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center text-white border border-white/20 shrink-0">
                                             <section.icon className="w-4 h-4 md:w-5 md:h-5" />
                                         </div>
-                                        <span className="text-[var(--color-secondary)] font-bold uppercase tracking-widest text-[10px] md:text-xs bg-black/40 px-3 py-1 rounded-full border border-white/10">
+                                        <span className="text-[var(--color-secondary)] font-bold uppercase tracking-widest text-[10px] md:text-xs bg-black/40 px-3 py-1 rounded-full border border-white/10 shrink-0">
                                             {section.subtitle}
                                         </span>
                                     </div>
 
                                     <motion.h3
-                                        layout="position"
-                                        className="text-2xl md:text-5xl font-serif font-bold text-white mb-2 md:mb-4 leading-tight"
+                                        initial={{ opacity: 0, y: 10 }}
+                                        animate={{ opacity: isActive ? 1 : 0, y: isActive ? 0 : 10 }}
+                                        transition={{ duration: 0.3, delay: 0.1 }}
+                                        className="text-2xl md:text-5xl font-serif font-bold text-white mb-2 md:mb-4 leading-tight shrink-0"
                                     >
                                         {section.title}
                                     </motion.h3>
 
                                     <motion.p
-                                        initial={{ opacity: 0 }}
-                                        animate={{ opacity: isActive ? 1 : 0 }}
-                                        transition={{ delay: 0.1 }}
-                                        className="text-white/80 text-sm md:text-lg leading-relaxed mb-4 md:mb-6 max-w-lg font-light block"
+                                        initial={{ opacity: 0, y: 10 }}
+                                        animate={{ opacity: isActive ? 1 : 0, y: isActive ? 0 : 10 }}
+                                        transition={{ duration: 0.3, delay: 0.15 }}
+                                        className="text-white/80 text-sm md:text-lg leading-relaxed mb-4 md:mb-6 max-w-lg font-light block shrink-0"
                                     >
                                         {section.content}
                                     </motion.p>
@@ -143,7 +164,8 @@ export function ElleStorySection() {
                                     <motion.div
                                         initial={{ opacity: 0 }}
                                         animate={{ opacity: isActive ? 1 : 0 }}
-                                        transition={{ delay: 0.2 }}
+                                        transition={{ duration: 0.3, delay: 0.2 }}
+                                        className="shrink-0"
                                     >
                                         <Link
                                             href="/blog/elle-story"
@@ -153,15 +175,22 @@ export function ElleStorySection() {
                                         </Link>
                                     </motion.div>
                                 </div>
-                            </div>
+                            </motion.div>
 
-                            {/* Inactive Label (Vertical Text) - Hidden on Mobile Active state to avoid clutter */}
-                            <div className={`absolute inset-0 flex items-center justify-center transition-all duration-500 ${isActive ? 'opacity-0 pointer-events-none' : 'opacity-100'}`}>
+                            {/* Inactive Label (Vertical Text) */}
+                            <motion.div
+                                className="absolute inset-0 flex items-center justify-center"
+                                initial={false}
+                                animate={{
+                                    opacity: isActive ? 0 : 1,
+                                    pointerEvents: isActive ? 'none' : 'auto'
+                                }}
+                                transition={{ duration: 0.5 }}
+                            >
                                 <h3 className="text-sm md:text-2xl font-bold uppercase tracking-[0.2em] text-white/90 -rotate-90 whitespace-nowrap drop-shadow-md">
                                     {section.title}
                                 </h3>
-                            </div>
-
+                            </motion.div>
                         </motion.div>
                     );
                 })}

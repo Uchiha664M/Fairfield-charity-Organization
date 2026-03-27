@@ -11,7 +11,7 @@ export function Logo({
     variant?: "icon" | "full" | "horizontal";
     dark?: boolean;
 }) {
-    const textColor = dark ? "text-white" : "text-[#0D47A1]";
+    const textColor = dark ? "text-white" : "text-[#1B3A5C]";
 
     const Icon = (
         <motion.div
@@ -28,6 +28,7 @@ export function Logo({
                 src="/logo.png"
                 alt="Fairfield Charity Organization Logo"
                 className="w-full h-full object-contain"
+                style={{ filter: 'drop-shadow(0 2px 8px rgba(0,0,0,0.15))' }}
             />
         </motion.div>
     );

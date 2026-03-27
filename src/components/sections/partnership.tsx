@@ -38,7 +38,7 @@ export function PartnershipSection() {
                         </h2>
                         <div className="w-24 h-1 bg-[var(--color-secondary)] mx-auto mb-8" />
                         <p className="text-lg text-[var(--color-text-light)] leading-relaxed">
-                            A rare alignment of preparation & visibility. For the first time in recent history, Uganda is not just participating; we are leading.
+                            A rare alignment of preparation &amp; visibility. For the first time in recent history, Uganda is not just participating; we are leading.
                         </p>
                     </motion.div>
                 </div>
@@ -58,7 +58,7 @@ export function PartnershipSection() {
                                 <div className="p-2 bg-[var(--color-secondary)]/10 rounded-lg text-[var(--color-secondary)]">
                                     <Target className="w-6 h-6" />
                                 </div>
-                                The "FAIRFIELD EFFECT"
+                                The &quot;FAIRFIELD EFFECT&quot;
                             </h3>
                             <p className="text-[var(--color-text-light)] mb-6">
                                 This Top 5 ranking was not accidental. It was engineered by the Fairfield Team:
