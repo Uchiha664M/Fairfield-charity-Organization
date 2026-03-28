@@ -28,7 +28,6 @@ const pathways = [
 export function CallToActionStrip() {
   return (
     <section className="relative overflow-hidden bg-[linear-gradient(135deg,#102746_0%,#17375e_50%,#0e223d_100%)] py-16 text-white">
-      <div className="absolute inset-0 opacity-[0.08]" style={{ backgroundImage: 'radial-gradient(circle, rgba(255,255,255,0.95) 1px, transparent 1px)', backgroundSize: '26px 26px' }} />
       <div className="absolute -left-24 top-1/2 h-64 w-64 -translate-y-1/2 rounded-full bg-[var(--color-highlight)]/12 blur-3xl" />
       <div className="absolute -right-20 top-0 h-72 w-72 rounded-full bg-[var(--color-secondary)]/10 blur-3xl" />
 

@@ -28,7 +28,6 @@ const trustSignals = ['Founder-led and partnership-ready', 'Designed for communi
 export function MissionImpact() {
   return (
     <section className="relative overflow-hidden bg-[linear-gradient(180deg,#fffdf9_0%,#f7f3ec_100%)] py-24 text-[var(--color-text-dark)]" id="mission">
-      <div className="absolute inset-0 opacity-[0.06]" style={{ backgroundImage: 'radial-gradient(circle, rgba(15,23,42,0.9) 1px, transparent 1px)', backgroundSize: '20px 20px' }} />
       <div className="absolute -right-28 top-10 h-72 w-72 rounded-full bg-[var(--color-secondary)]/12 blur-3xl" />
       <div className="absolute -left-20 bottom-0 h-72 w-72 rounded-full bg-[var(--color-highlight)]/10 blur-3xl" />
 

@@ -33,7 +33,6 @@ export function FinancialTransparency() {
   return (
     <section className="relative overflow-hidden bg-[#09111c] py-24 text-white">
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(245,166,35,0.08),transparent_25%),radial-gradient(circle_at_bottom_left,rgba(43,188,179,0.10),transparent_30%)]" />
-      <div className="absolute inset-0 opacity-[0.06]" style={{ backgroundImage: 'radial-gradient(circle, rgba(255,255,255,0.9) 1px, transparent 1px)', backgroundSize: '22px 22px' }} />
 
       <div className="container relative z-10">
         <div className="grid gap-14 lg:grid-cols-[minmax(0,0.92fr)_minmax(0,1.08fr)] lg:items-center">

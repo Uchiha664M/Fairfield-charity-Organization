@@ -70,7 +70,6 @@ export function ProfileBridge() {
                 className="group relative overflow-hidden rounded-[2rem] border border-[var(--color-primary)]/10 bg-white/80 p-8 shadow-[0_20px_70px_-35px_rgba(15,23,42,0.35)] backdrop-blur-sm"
               >
                 <div className={`absolute inset-0 bg-gradient-to-br ${track.accent} opacity-80 transition-opacity duration-500 group-hover:opacity-100`} />
-                <div className="absolute inset-0 opacity-[0.07]" style={{ backgroundImage: 'radial-gradient(circle, rgba(15,23,42,0.9) 1px, transparent 1px)', backgroundSize: '20px 20px' }} />
 
                 <div className="relative z-10 flex h-full flex-col">
                   <div className="mb-8 flex items-center justify-between">

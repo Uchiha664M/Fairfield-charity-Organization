@@ -1,33 +1,37 @@
 import Link from 'next/link';
-import { ArrowRight, Crown, ExternalLink, Globe, HeartHandshake, Instagram, MapPin, Sparkles, Star } from 'lucide-react';
+import { ArrowRight, Crown, Download, ExternalLink, FileText, Globe, HandHeart, HeartHandshake, Instagram, Linkedin, MapPin, Sparkles, Star, TrendingUp } from 'lucide-react';
 import { Header } from '@/components/layout/header';
 import { Footer } from '@/components/layout/footer';
 import { Button } from '@/components/ui/button';
 import { FadeIn, ScaleIn } from '@/components/animations/fade-in';
 
 const profileStats = [
-  { value: '22K', label: 'Instagram followers' },
-  { value: '295', label: 'Public posts' },
-  { value: '2025', label: 'Miss Uganda year' },
-  { value: '12K+', label: 'Fairfield lives touched' },
+  { value: '22K', label: 'Instagram followers', sublabel: 'Active public reach' },
+  { value: '295', label: 'Public posts', sublabel: 'Content & engagement' },
+  { value: '2025', label: 'Miss Uganda year', sublabel: 'Platform visibility' },
+  { value: '12K+', label: 'Fairfield lives touched', sublabel: 'Community impact' },
 ];
 
 const profileMoments = [
   {
     title: 'Roots in service',
     copy: 'Her story begins with community, discipline, and a service instinct shaped long before public recognition.',
+    location: 'Bukomansimbi District',
   },
   {
     title: 'Flight and formation',
     copy: 'Aviation sharpened confidence, procedure, and composure — all qualities now visible in how she carries purpose.',
+    location: 'Soroti Flying School',
   },
   {
     title: 'Miss Uganda platform',
     copy: 'The crown turned attention into leverage, giving her a stronger microphone for causes that need sustained visibility.',
+    location: 'National stage',
   },
   {
     title: 'Fairfield + Elle Cares',
-    copy: 'Her advocacy platform now amplifies Fairfield’s work in dignity, girls’ education, healing, and resilience.',
+    copy: "Her advocacy platform now amplifies Fairfield's work in dignity, girls' education, healing, and resilience.",
+    location: 'Global reach',
   },
 ];
 
@@ -49,6 +53,12 @@ const differentiators = [
   },
 ];
 
+const mediaAssets = [
+  { label: 'Profile one-sheet', type: 'PDF', size: '2.1 MB' },
+  { label: 'High-res photos', type: 'ZIP', size: '45 MB' },
+  { label: 'Brand guidelines', type: 'PDF', size: '3.8 MB' },
+];
+
 export default function MissWorldPage() {
   return (
     <main className="min-h-screen bg-[#f7f3ec] text-[var(--color-text-dark)]">
@@ -67,12 +77,12 @@ export default function MissWorldPage() {
         </div>
 
         <div className="container relative z-20 flex min-h-[88vh] items-center py-28">
-          <div className="grid gap-10 lg:grid-cols-[minmax(0,1.05fr)_360px] lg:items-end">
+          <div className="grid gap-10 lg:grid-cols-[minmax(0,1.05fr)_420px] lg:items-end">
             <div>
               <FadeIn direction="up" delay={0.15}>
                 <div className="mb-6 inline-flex items-center gap-3 rounded-full border border-white/15 bg-white/8 px-4 py-2 backdrop-blur-md">
                   <Sparkles className="h-4 w-4 text-[var(--color-secondary)]" />
-                  <span className="text-[11px] font-semibold uppercase tracking-[0.28em] text-white/78">Miss Uganda Profile • Fairfield Reference</span>
+                  <span className="text-[11px] font-semibold uppercase tracking-[0.28em] text-white/78">Miss Uganda Profile • Sponsor Reference</span>
                 </div>
               </FadeIn>
               <FadeIn direction="up" delay={0.28}>
@@ -125,6 +135,10 @@ export default function MissWorldPage() {
                     <p className="text-[10px] uppercase tracking-[0.22em] text-white/45">Public signal</p>
                     <p className="mt-2 text-lg font-semibold text-white">22K followers • 295 posts</p>
                   </div>
+                  <div className="rounded-[1.5rem] border border-white/10 bg-[#0b1421]/85 p-4">
+                    <p className="text-[10px] uppercase tracking-[0.22em] text-white/45">For partners</p>
+                    <p className="mt-2 text-sm leading-relaxed text-slate-300">Use this profile page to brief sponsors, introduce media opportunities, or anchor partnership presentations.</p>
+                  </div>
                 </div>
               </div>
             </FadeIn>
@@ -139,6 +153,7 @@ export default function MissWorldPage() {
               <FadeIn key={item.label} direction="up" delay={0.1 + index * 0.08} className="rounded-[1.75rem] border border-[var(--color-primary)]/8 bg-white p-6 shadow-[0_20px_50px_-35px_rgba(15,23,42,0.35)]">
                 <div className="text-4xl font-semibold tracking-tight text-[var(--color-primary)]">{item.value}</div>
                 <div className="mt-2 text-[11px] uppercase tracking-[0.24em] text-slate-500">{item.label}</div>
+                <div className="mt-1 text-xs text-slate-400">{item.sublabel}</div>
               </FadeIn>
             ))}
           </div>
@@ -146,18 +161,37 @@ export default function MissWorldPage() {
       </section>
 
       <section className="pb-20">
-        <div className="container grid gap-10 lg:grid-cols-[380px_minmax(0,1fr)] lg:items-start">
+        <div className="container grid gap-10 lg:grid-cols-[420px_minmax(0,1fr)] lg:items-start">
           <FadeIn direction="right">
-            <div className="sticky top-28 rounded-[2rem] border border-[var(--color-primary)]/10 bg-white p-6 shadow-[0_20px_60px_-35px_rgba(15,23,42,0.35)]">
+            <div className="sticky top-28 rounded-[2rem] border border-[var(--color-primary)]/10 bg-white p-7 shadow-[0_20px_60px_-35px_rgba(15,23,42,0.35)]">
               <p className="text-[10px] uppercase tracking-[0.24em] text-[var(--color-secondary)]">Why this profile matters</p>
               <h2 className="mt-4 text-3xl font-semibold tracking-tight text-[var(--color-text-dark)]">She is becoming a stronger bridge between advocacy and institution-building.</h2>
               <p className="mt-4 text-base leading-relaxed text-slate-600">
-                This page isn’t only about personal branding. It helps explain why Elle is relevant to Fairfield, to partners, and to a wider audience interested in purpose-led leadership.
+                This page isn't only about personal branding. It helps explain why Elle is relevant to Fairfield, to partners, and to a wider audience interested in purpose-led leadership.
               </p>
               <div className="mt-6 space-y-3 text-sm text-slate-600">
                 <div className="flex items-start gap-3"><MapPin className="mt-0.5 h-4 w-4 text-[var(--color-accent)]" /><span>Grounded in community identity and public representation.</span></div>
                 <div className="flex items-start gap-3"><Globe className="mt-0.5 h-4 w-4 text-[var(--color-highlight)]" /><span>Capable of carrying local stories onto bigger regional and global stages.</span></div>
                 <div className="flex items-start gap-3"><Star className="mt-0.5 h-4 w-4 text-[var(--color-secondary)]" /><span>Useful for sponsors, media introductions, and partnership presentations.</span></div>
+              </div>
+
+              <div className="mt-7 space-y-2">
+                <p className="text-[10px] uppercase tracking-[0.24em] text-slate-500">Media & sponsor assets</p>
+                {mediaAssets.map((asset) => (
+                  <button
+                    key={asset.label}
+                    className="flex w-full items-center justify-between rounded-2xl border border-[var(--color-primary)]/8 bg-slate-50 px-4 py-3 text-left text-sm transition-all hover:border-[var(--color-primary)]/20 hover:bg-white"
+                  >
+                    <div className="flex items-center gap-3">
+                      <FileText className="h-4 w-4 text-[var(--color-primary)]" />
+                      <div>
+                        <div className="font-semibold text-[var(--color-text-dark)]">{asset.label}</div>
+                        <div className="text-xs text-slate-400">{asset.type} • {asset.size}</div>
+                      </div>
+                    </div>
+                    <Download className="h-4 w-4 text-slate-400" />
+                  </button>
+                ))}
               </div>
             </div>
           </FadeIn>
@@ -167,7 +201,7 @@ export default function MissWorldPage() {
               <FadeIn key={item.title} direction="up" delay={0.08 * index} className="rounded-[2rem] border border-[var(--color-primary)]/8 bg-white p-8 shadow-[0_20px_60px_-40px_rgba(15,23,42,0.35)]">
                 <div className="mb-4 flex items-center gap-3 text-[11px] font-semibold uppercase tracking-[0.24em] text-[var(--color-secondary)]">
                   <span className="flex h-8 w-8 items-center justify-center rounded-full bg-[var(--color-primary)] text-white">0{index + 1}</span>
-                  Profile chapter
+                  {item.location}
                 </div>
                 <h3 className="text-2xl font-semibold tracking-tight text-[var(--color-text-dark)]">{item.title}</h3>
                 <p className="mt-3 text-base leading-relaxed text-slate-600">{item.copy}</p>
@@ -206,12 +240,12 @@ export default function MissWorldPage() {
       <section className="py-24">
         <div className="container">
           <FadeIn direction="up" className="rounded-[2.5rem] border border-[var(--color-primary)]/10 bg-white p-10 shadow-[0_30px_80px_-45px_rgba(15,23,42,0.35)] lg:p-14">
-            <div className="grid gap-10 lg:grid-cols-[minmax(0,1fr)_300px] lg:items-center">
+            <div className="grid gap-10 lg:grid-cols-[minmax(0,1fr)_340px] lg:items-center">
               <div>
                 <p className="text-[11px] uppercase tracking-[0.24em] text-[var(--color-secondary)]">Next step</p>
                 <h2 className="mt-4 text-4xl font-semibold tracking-tight text-[var(--color-text-dark)] md:text-5xl">Use this profile to support sponsors, media, and Fairfield partnership conversations.</h2>
                 <p className="mt-5 max-w-2xl text-lg leading-relaxed text-slate-600">
-                  Elle’s story is now positioned as something more useful: a credible public profile that complements Fairfield’s mission and strengthens how the organization is presented to the world.
+                  Elle's story is now positioned as something more useful: a credible public profile that complements Fairfield's mission and strengthens how the organization is presented to the world.
                 </p>
               </div>
               <div className="space-y-3">

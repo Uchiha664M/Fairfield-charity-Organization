@@ -23,7 +23,6 @@ export function FairfieldAmbassador() {
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute left-0 top-0 h-80 w-80 rounded-full bg-[var(--color-highlight)]/10 blur-3xl" />
         <div className="absolute bottom-0 right-0 h-96 w-96 rounded-full bg-[var(--color-secondary)]/10 blur-3xl" />
-        <div className="absolute inset-0 opacity-[0.05]" style={{ backgroundImage: 'radial-gradient(circle, rgba(255,255,255,0.85) 1px, transparent 1px)', backgroundSize: '26px 26px' }} />
       </div>
 
       <div className="container relative z-10">

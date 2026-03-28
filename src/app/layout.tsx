@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { Inter, Playfair_Display } from "next/font/google";
 import "./globals.css";
 import { LoadingScreen } from '@/components/layout/loading-screen';
-import { NoiseTexture } from '@/components/ui/noise-texture';
 
 const inter = Inter({
   variable: "--font-inter",
@@ -51,7 +50,6 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${inter.variable} ${playfair.variable} antialiased`}>
         <LoadingScreen />
-        <NoiseTexture />
         {children}
       </body>
     </html>
